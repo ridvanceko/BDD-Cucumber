@@ -1,18 +1,19 @@
-package steps;
+package steps.com.ebaysteps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pages.EbayHomePage;
+import org.openqa.selenium.WebElement;
+import pages.ebaypages.EbayHomePage;
+import pages.ebaypages.EbayResultsPage;
 import utils.Driver;
-
-import static utils.Driver.getDriver;
 
 public class EbaySearchSteps {
     WebDriver driver;
     EbayHomePage ebayHomePage;
+    EbayResultsPage ebayResultsPage;
 
     @Given("user is on ebay home page")
     public void user_is_on_ebay_home_page() {
@@ -31,6 +32,10 @@ public class EbaySearchSteps {
 
     @Then("user sees results about iMac only")
     public void user_sees_results_about_i_mac_only() {
+        ebayResultsPage = new EbayResultsPage(driver);
+       for(WebElement link :  ebayResultsPage.listOfLinks) {
+           System.out.println(link.getText());
+       }
 
     }
 
