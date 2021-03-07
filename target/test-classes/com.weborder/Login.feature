@@ -5,4 +5,5 @@ Feature: Login Functionality for WebOrder Page
     When the user provides the credentials
     Then the user is on the home page
 
-    
+
+

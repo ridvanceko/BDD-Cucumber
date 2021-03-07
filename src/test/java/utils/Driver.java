@@ -18,7 +18,7 @@ public class Driver {
 
 
         if(driver==null) {
-            switch ("chrome") {
+            switch (ConfigReader.getProperty("browser")) {
 
                 case "chrome":
                     WebDriverManager.chromedriver().setup();

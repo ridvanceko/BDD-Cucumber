@@ -7,8 +7,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "",
-        glue = "",
+        features = "src/test/resources/com.weborder/Login.feature",
+        glue = "steps",
+        dryRun = false
 )
 
 public class cukesRunner {
